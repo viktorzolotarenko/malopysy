@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Історія №1 — Мальописи</title>
+<meta name="description" content="Мальописи — картковий набір. Складіть історію з карток.">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="story" data-story="1">
+<header class="site-header" id="site-header"></header>
+<main class="story">
+  <div class="story-head">
+    <div>
+      <h1 id="story-title"></h1>
+      <p class="story-caption" id="story-caption"></p>
+    </div>
+    <button class="btn" id="shuffle-btn" type="button" aria-label="Перемішати картки">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="m15 15 6 6"/><path d="M4 4l5 5"/></svg>
+      <span class="btn-label">Перемішати</span>
+    </button>
+  </div>
+  <p class="instruction" id="instruction"></p>
+
+  <div class="board" id="board">
+    <div class="board-top">
+      <section class="zone zone-story" aria-label="Історія">
+        <h2>Історія</h2>
+        <div class="slots" id="story-slots"></div>
+      </section>
+      <section class="zone zone-discard" aria-label="Зайві картки">
+        <h2>Зайві</h2>
+        <div class="slots" id="discard-slots"></div>
+      </section>
+    </div>
+    <section class="zone zone-table" aria-label="Картки">
+      <h2>Картки</h2>
+      <div class="table" id="table"></div>
+    </section>
+    <div class="cards-layer" id="cards-layer"></div>
+  </div>
+</main>
+
+<div class="tap-bar" id="tap-bar" role="status">
+  <span class="tap-bar__text">Оберіть місце для картки</span>
+  <span class="tap-bar__actions">
+    <button type="button" data-return hidden>Повернути в «Картки»</button>
+    <button type="button" data-cancel-select>Скасувати</button>
+  </span>
+</div>
+
+<div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-label="Картка крупно" hidden>
+  <img class="zoom__img" id="zoom-img" alt="Картка крупно">
+  <button class="zoom__btn zoom__close" type="button" aria-label="Закрити"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button class="zoom__btn zoom__prev" type="button" aria-label="Попередня картка"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+  <button class="zoom__btn zoom__next" type="button" aria-label="Наступна картка"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+  <p class="zoom__where" id="zoom-where"></p>
+</div>
+
+<div class="dialog" id="confirm" role="dialog" aria-modal="true" aria-labelledby="confirm-title" hidden>
+  <div class="dialog__box">
+    <h2 id="confirm-title">Перемішати картки?</h2>
+    <p>Усі картки повернуться на стіл у новому порядку. Поточна розкладка зникне.</p>
+    <div class="dialog__actions">
+      <button class="btn btn--ghost" type="button" data-cancel>Скасувати</button>
+      <button class="btn" type="button" data-confirm>Перемішати</button>
+    </div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
