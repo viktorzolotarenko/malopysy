@@ -44,7 +44,7 @@
     }).join("");
     header.innerHTML =
       '<div class="site-header__inner">' +
-      '<a class="site-logo" href="index.html" aria-label="' + esc(DATA.siteTitle) + ' — на титульну сторінку"><img src="images/logo.png" alt="' + esc(DATA.siteTitle) + '. Картковий набір" width="958" height="331"></a>' +
+      '<a class="site-logo" href="index.html" aria-label="' + esc(DATA.siteTitle) + ' — на титульну сторінку"><img src="logo.png" alt="' + esc(DATA.siteTitle) + '. Картковий набір" width="958" height="331"></a>' +
       '<nav class="site-nav" aria-label="Історії">' + nav + "</nav></div>";
   })();
 
